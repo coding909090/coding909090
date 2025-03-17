@@ -1,73 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="indexc.css" />
-  </head>
-  <body>
-    <nav class="navigation">
-      <ul>
-        <li class="llgg">
-        <a href="http://localhost/project/index2.php"><img src="logo.png" alt="E Mart" /></a>
-               </li>
-        <li>
-          <a href="https://www.linkedin.com/in/rahul-meshram-b2079b22a/"
-            >Home</a
-          >
-        </li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Support</a></li>
-      </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="https://cdn2.iconfinder.com/data/icons/luchesa-part-3/128/Programming-1024.png">
+    <title>icoder</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Custom Styling */
+        .navbar { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+        .navbar-brand { font-weight: bold; color: white; }
+        .navbar-nav .nav-link { color: white; font-weight: 500; }
+        .nav-link:hover { color: #f8f9fa; text-decoration: underline; }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 { font-size: 3rem; font-weight: bold; }
+        .hero p { font-size: 1.3rem; margin-bottom: 20px; }
+        .btn-primary {
+            background: #ff7e5f;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+        }
+        .btn-primary:hover {
+            background: #feb47b;
+        }
+
+        /* Home Section */
+        .home-section {
+            padding: 80px 0;
+        }
+        .home-section img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .home-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .home-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .navbar-nav {
+    margin-left: 0; /* বাঁ দিকে আনার জন্য */
+    justify-content: flex-start; /* শুরু থেকে শুরু করবে */
+}
+.navbar-nav {
+    margin: auto; /* স্বয়ংক্রিয়ভাবে কেন্দ্রে আনবে */
+    justify-content: center; /* কেন্দ্রে স্থাপন করবে */
+    display: flex;
+    width: 100%;
+}
+.menu {
+    display: flex;
+    justify-content: flex-start; /* বাঁ দিকে আনবে */
+}
+.menu {
+    display: flex;
+    justify-content: center; /* মাঝখানে আনবে */
+}
+
+/* ✅ Desktop Default Style */
+.container {
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+}
+
+/* ✅ Tablet (Screens <= 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        font-size: 18px;
+    }
+}
+
+/* ✅ Mobile (Screens <= 480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+        
+        /* Footer */
+        .footer { background: #343a40; color: white; padding: 40px 0; }
+        .footer a { color: #f8f9fa; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* Additional styles omitted for brevity */
+    </style>
+</head>
+<body>
+
+    <!-- ✅ HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">icoder</a> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#admission">Admission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#loginModal" data-bs-toggle="modal">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signupModal" data-bs-toggle="modal">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <main>
-      <div class="conbox">
-        <form action="strln.php" method="post">
-        <div class="box store">
-          <h2>Store Login</h2>
-          <input type="text" name="nemail" id="idemail" placeholder="Enter your Email">
-          <input type="password" name="npassword" id="idpassword" placeholder="Enter your password">
-          <input type="submit" value="Submit" id="sbmt">
+    
+    <!-- ✅ HERO SECTION -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to icoder</h1>
+            <p>Building stunning websites with cutting-edge technology.</p>
+            <a href="#home" class="btn btn-primary">Learn More</a>
         </div>
-      </form> 
+    </div>
 
-        <div class="box logo"><img src="logo.png" alt="" /></div>
-
-        <form action="custln.php" method="post">
-        <div class="box customer">
-          <h2>Customer Login</h2>
-          <input type="text" name="nemail" id="idemail" placeholder="Enter your email">
-          <input type="password" name="npassword" id="idpassword" placeholder="Enter your password">
-          <div>
-            <input type="submit" value="Submit">
-            <a href="custreg.html" class="lv">register here</a>
-          </div>
-        </form>   
+    <!-- ✅ HOME SECTION -->
+    <section id="home" class="home-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>About iCoder</h2>
+                    <p>We specialize in creating modern, responsive, and user-friendly websites. Our team focuses on clean code and stunning UI/UX to enhance digital experiences.</p>
+                    <p>Whether it's a portfolio, e-commerce site, or business website, we ensure quality and innovation in every project.</p>
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" alt="Web Development">
+                </div>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer class="ft">
-      <h2>Contact Us</h2>
-      <section class="cont">
-        <a href="#" target="_blank"
-          ><img src="Images/fb.jpg" alt="" width="50px" height="50px"
-        /></a>
-        <a href="#" target="_blank"
-          ><img src="Images/in.webp" alt="" width="50px" height="50px"
-        /></a>
-        <a href="#" target="_blank"
-          ><img src="Images/tw.webp" alt="" width="50px" height="50px"
-        /></a>
-        <a
-          href="#"
-          target="_blank"
-          ><img src="Images/link.png" alt="" width="50px" height="50px"
-        /></a>
-      </section>
-      <p>© 2025 RM Pvt. Ltd. All rights reserved</p>
+    </section>
+
+    <!-- ✅ SERVICES SECTION -->
+    <section id="services" class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card p-4 shadow">
+                        <h4>Web Development</h4>
+                        <p>We create stunning and fast-loading websites with the latest technology.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 shadow">
+                        <h4>UI/UX Design</h4>
+                        <p>We design modern and user-friendly interfaces for the best user experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 shadow">
+                        <h4>SEO & Optimization</h4>
+                        <p>We optimize your website for better ranking and faster performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ COURSES SECTION -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Courses</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="https://img.freepik.com/premium-photo/html-system-websites-concept_23-2150323534.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="card-img-top" alt="Web Development">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Learn HTML, CSS, JavaScript, and modern frameworks.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="card-img-top" alt="UI/UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">UI/UX Design</h5>
+                            <p class="card-text">Master Figma, Adobe XD, and create stunning UI designs.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="https://img.freepik.com/free-photo/3d-rendering-biorobots-concept_23-2149524398.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="card-img-top" alt="Machine Learning">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning</h5>
+                            <p class="card-text">Explore AI, Python, TensorFlow, and deep learning.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ ADMISSION SECTION -->
+    <section id="admission" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Admission Open</h2>
+            <p class="text-center mb-4">Apply for our courses and start your learning journey today!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow p-4">
+                        <form id="admissionForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="course" class="form-label">Select Course</label>
+                                <select class="form-control" id="course" required>
+                                    <option value="">Choose a Course</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="Machine Learning">Machine Learning</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Why do you want to join?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Apply Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ GALLERY SECTION -->
+    <section id="gallery" class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Our Gallery</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://img.freepik.com/premium-photo/close-up-laptop-white-desk-with-coffee-cup-supplies-glowing-blue-search-bar-blurry-polygonal-background-search-engine-optimization-browser-concept-double-exposure_670147-108627.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="img-fluid rounded shadow" alt="Gallery Image">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://img.freepik.com/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="img-fluid rounded shadow" alt="Gallery Image">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://img.freepik.com/free-vector/flat-nature-landing-page-template_52683-20598.jpg?uid=R117194032&ga=GA1.1.1129261660.1741444871&semt=ais_hybrid" class="img-fluid rounded shadow" alt="Gallery Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ CONTACT SECTION -->
+    <section id="contact" class="bg-light py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Contact Us</h2>
+            <p>Have a project in mind? Let's talk!</p>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <textarea class="form-control mb-3" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>We create stunning websites with modern UI/UX.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <a href="#">Home</a><br>
+                    <a href="#">About</a><br>
+                    <a href="#">Services</a><br>
+                    <a href="#">Courses</a>
+                    <a href="#">Admission</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p>Email: <a href="mailto:subhajitdas1040@gmail.com">subhajitdas1040@gmail.com</a></p> 
+                    <p>Phone: <a href="tel:+919863614566">+91 9863614566</a></p> 
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="me-2"><i class="bi bi-facebook"></i> Facebook</a><br>  
+                    <a href="#" class="me-2"><i class="bi bi-twitter"></i> Twitter</a><br>  
+                    <a href="#" class="me-2"><i class="bi bi-instagram"></i> Instagram</a> 
+                </div>
+            </div>
+            <hr>
+            <p>© 2025 icoder. All Rights Reserved.</p> 
+        </div>
     </footer>
-  </body>
+
+    <!-- ✅ LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="loginUsername" placeholder="Enter your username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Admission Form Submission
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop form from submitting
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let course = document.getElementById("course").value;
+            let message = document.getElementById("message").value;
+
+            if (name && email && course && message) {
+                alert(`🎉 Thank you, ${name}! Your admission request for ${course} has been received.`);
+                this.reset();
+            } else {
+                alert("⚠️ Please fill all the fields.");
+            }
+        });
+
+        // Login Form Submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop form from submitting
+
+            let username = document.getElementById("loginUsername").value;
+            let password = document.getElementById("loginPassword").value;
+
+            if (username && password) {
+                alert(`Welcome back, ${username}!`);
+                // Here you can add logic to handle login
+            } else {
+                alert("⚠️ Please fill all the fields.");
+            }
+        });
+
+        // Signup Form Submission
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop form from submitting
+
+            let username = document.getElementById("signupUsername").value;
+            let email = document.getElementById("signupEmail").value;
+            let password = document.getElementById("signupPassword").value;
+
+            if (username && email && password) {
+                alert(`Welcome, ${username}! Your account has been created.`);
+                // Here you can add logic to handle signup
+            } else {
+                alert("⚠️ Please fill all the fields.");
+            }
+        });
+    </script>
+</body>
 </html>
